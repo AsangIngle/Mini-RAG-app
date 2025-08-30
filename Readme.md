@@ -3,19 +3,19 @@
 This project is a **Retrieval-Augmented Generation (RAG)** application built as part of the Predusk AI/ML Intern assessment.  
 It combines **Google Gemini** for answer generation, **Qdrant** for vector storage, and **Cohere** for document re-ranking.
 
----
 
-## ✨ Features
-- 📄 Upload a PDF file, process its text into embeddings.
-- 🧠 Store embeddings in **Qdrant** (vector database).
-- 🔍 Retrieve and **re-rank** the most relevant chunks for a query.
-- 💡 Generate grounded answers using **Gemini** with inline citations `[1], [2]`.
-- 📚 Display retrieved sources for transparency.
-- ⚡ Show response latency and estimated token usage.
 
----
+##  Features
+1.Upload a PDF file, process its text into embeddings.
+2.Store embeddings in **Qdrant** (vector database).
+3.Retrieve and **re-rank** the most relevant chunks for a query.
+4.Generate grounded answers using **Gemini** with inline citations `[1], [2]`.
+5.Display retrieved sources for transparency.
+6.Show response latency and estimated token usage.
 
-## 🛠️ Architecture
+
+
+##  Architecture
 
 ```mermaid
 flowchart TD

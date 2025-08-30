@@ -2,7 +2,7 @@ import os
 import logging
 
 import google.generativeai as genai
-
+import time
 import streamlit as st
 from dotenv import load_dotenv
 from qdrant_client import QdrantClient
@@ -128,10 +128,14 @@ if uploaded_file:
 
 query = st.text_input("Ask a question")
 if st.button("Submit Query") and query:
+    start = time.time()
     answer, retrieved_docs = answer_query(query)
-    st.write(" Answer")
+    end = time.time()
+    st.write("Answer:")
     st.write(answer)
-    if retrieved_docs:
-        st.write("Sources")
-        for i, doc in enumerate(retrieved_docs, 1):
-            st.write(f"[{i}] {doc[:200]}...")
+    st.write(f"Response time: {end - start:.2f} seconds")
+
+    # Optional: Estimate token usage
+    total_chars = len(query) + len(" ".join(retrieved_docs)) + len(answer)
+    est_tokens = total_chars // 4   # rough estimate: 1 token ≈ 4 chars
+    st.write(f"Estimated tokens: {est_tokens}")

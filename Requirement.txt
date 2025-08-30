@@ -4,4 +4,4 @@ qdrant-client
 sentence-transformers
 langchain-community
 PyMuPDF
-google-generativeai
+google-generativeai==0.8.3

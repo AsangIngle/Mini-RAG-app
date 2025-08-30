@@ -1,0 +1,7 @@
+streamlit
+langchain
+langchain-google-genai
+qdrant-client
+sentence-transformers
+transformers
+torch

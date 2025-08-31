@@ -29,7 +29,7 @@ flowchart TD
     H --> I[Gemini LLM]
     I --> J[Answer with Citations + Sources]
 
-How it Works
+##How it Works
 
 1.Upload a PDF – Text is extracted and split into chunks (1000 chars, 150 overlap).
 2.Embedding – Chunks encoded using all-MiniLM-L6-v2 (384-dim).
@@ -39,7 +39,7 @@ How it Works
 6.Answer – Gemini generates a final answer with inline citations.
 7.UI – Streamlit shows answer, sources, response time, and estimated tokens.
 
-Installation
+##Installation
 
 # Clone the repo
 git clone https://github.com/your-username/rag-gemini-qdrant.git
@@ -59,7 +59,7 @@ QDRANT_API_KEY=your_qdrant_api_key
 COHERE_API_KEY=your_cohere_api_key
 Also provide .env.example with the same keys but empty values.
 
-Usage
+##Usage
 
 Run the Streamlit app:
   streamlit run backend.py
@@ -68,7 +68,7 @@ Run the Streamlit app:
 2.Ask a question in the text box.
 3.See the answer with citations, sources, latency, and token estimates.
 
-Remarks
+##Remarks
 
 Currently supports only PDFs.
 Embedding model: all-MiniLM-L6-v2 (384-d).
@@ -77,7 +77,7 @@ Token usage is estimated (1 token ≈ 4 characters).
 Free-tier APIs may hit limits → if so, fallback/error messages shown.
 Tradeoff: Gemini Flash used for speed & cost efficiency (instead of Pro).
 
-Acceptance Criteria Checklist
+##Acceptance Criteria Checklist
 Live hosted on Streamlit Cloud.
 Query -> retrieved chunks -> reranked -> Gemini answer with citations.
 Latency + token estimates displayed.
